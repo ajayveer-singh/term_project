@@ -1,138 +1,163 @@
-/* Base styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    text-align: center; /* Center all text on the page */
 }
 
 header {
     background-color: #333;
-    padding: 10px;
-    text-align: center;
-}
-
-header nav a {
     color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-}
-
-h1, h2 {
+    padding: 15px;
     text-align: center;
-    color: #333;
 }
 
-#products, #cart {
+h1 {
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
+/* Product List */
 #product-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center; /* Center the product list */
 }
 
 .product {
-    border: 1px solid #ccc;
-    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     margin: 10px;
-    width: 30%;
-    text-align: center;
-    background-color: #f9f9f9;
+    padding: 10px;
+    width: calc(33% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    text-align: center; /* Center the text inside the product */
 }
 
 .product img {
     max-width: 100%;
-    height: auto;
+    height: auto; /* Ensure the image maintains its aspect ratio */
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto; /* Center the image */
+    max-height: 200px; /* Set a maximum height for images to keep them uniform */
+}
+
+.product h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 1em;
+    margin: 10px 0;
 }
 
 .product button {
-    margin-top: 10px;
-    background-color: #4CAF50;
+    background-color: #28a745;
     color: white;
     border: none;
     padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .product button:hover {
-    background-color: #45a049;
+    background-color: #218838;
 }
 
-#cart-items {
+.product:hover {
+    transform: scale(1.05);
+}
+
+/* Cart */
+#cart {
     margin-top: 20px;
+}
+
+#cart-items div {
+    margin-bottom: 10px;
 }
 
 #total-price {
-    font-size: 1.2em;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-/* Form Styles (from provided CSS) */
-form {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #ccc;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="date"],
-select,
-textarea {
-    width: 95%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    background-color: #4CAF50;
+#checkout, #clear-cart {
+    background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 2px;
+    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
-button:hover {
-    background-color: #45a049;
+#checkout:hover, #clear-cart:hover {
+    background-color: #0056b3;
 }
 
-.map {
-    text-align: center;
-    margin: 10px;
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    #product-list {
+        flex-direction: column;
+        align-items: center; /* Center the products */
+    }
+
+    .product {
+        width: 80%; /* Make products take up more space on smaller screens */
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    #checkout, #clear-cart {
+        width: 100%;
+        margin-top: 15px;
+    }
 }
 
-iframe {
-    border: 2px solid black;
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    .product {
+        padding: 10px;
+    }
+
+    .product h3 {
+        font-size: 1.1em;
+    }
+
+    .product p {
+        font-size: 0.9em;
+    }
+
+    .product button {
+        padding: 8px;
+    }
+
+    #checkout, #clear-cart {
+        padding: 8px;
+        font-size: 0.9em;
+    }
 }
