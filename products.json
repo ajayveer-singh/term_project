@@ -1,0 +1,20 @@
+[
+    {
+        "id": "prod1",
+        "name": "BOSCH 1400W Circular Saw",
+        "price": 120.00,
+        "image": "images/image1.jpeg"
+    },
+    {
+        "id": "prod2",
+        "name": "DEWALT 15 Amp Corded Circular Saw",
+        "price": 150.00,
+        "image": "images/image2.jpg"
+    },
+    {
+        "id": "prod3",
+        "name": "TOTAL 5007MGA Circular Saw",
+        "price": 180.00,
+        "image": "images/image3.jpg"
+    }
+]
